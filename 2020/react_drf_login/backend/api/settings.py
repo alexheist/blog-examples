@@ -25,7 +25,7 @@ SECRET_KEY = "f$=(pnsmbh_t&*=)7ln_cu9d6qs5j@&rrlqv3%v(o0e+8a(@tr"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -119,3 +119,9 @@ STATIC_URL = "/static/"
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:8000",
 ]
+
+REST_FRAMEWORK = {
+	"DEFAULT_AUTHENTICATION_CLASSES": (
+		"rest_framework_simplejwt.authentication.JWTAuthentication",
+	)
+}
